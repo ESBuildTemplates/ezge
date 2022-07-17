@@ -6,7 +6,8 @@
   "scripts": {
     "format": "prettier --write src",
     "build": "gulp build",
-    "start": "gulp watch"
+    "start": "gulp watch",
+    "test": "tsc --noEmit"
   },
   "prettier": {
     "semi": false
