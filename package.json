@@ -12,10 +12,10 @@
     "semi": false
   },
   "dependencies": {
-    "@types/howler": "^2.2.7",
     "howler": "^2.2.3"
   },
   "devDependencies": {
+    "@types/howler": "^2.2.7",
     "esbuild": "^0.14.49",
     "esm": "^3.2.25",
     "gulp": "^4.0.2",
