@@ -5,6 +5,7 @@ export interface Time {
 }
 
 export default class GameLoopManager {
+  private running = false
   private elapsedTime = 0
   private lastTime = 0
 
@@ -12,6 +13,12 @@ export default class GameLoopManager {
    * FPS (frame per second)
    */
   public framerate = 30
+
+  public wait(setup: () => Promise<void>) {
+    setup()
+      .then(() => (this.running = true))
+      .catch(console.error)
+  }
 
   public start(loop: (time: Time) => unknown) {
     requestAnimationFrame(() => this.start(loop))
@@ -21,7 +28,7 @@ export default class GameLoopManager {
     const delta = this.elapsedTime - this.lastTime
     const interval = 1000 / this.framerate
 
-    if (delta > interval) {
+    if (this.running && delta > interval) {
       loop({
         elapsed: this.elapsedTime,
         last: this.lastTime,

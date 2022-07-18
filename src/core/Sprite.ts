@@ -1,3 +1,3 @@
 export default class Sprite {
-  constructor(src: string) {}
+  constructor(public readonly element: HTMLImageElement) {}
 }
