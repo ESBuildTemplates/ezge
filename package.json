@@ -13,6 +13,7 @@
     "semi": false
   },
   "dependencies": {
+    "@ghom/event-emitter": "^1.1.0",
     "howler": "^2.2.3"
   },
   "devDependencies": {

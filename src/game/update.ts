@@ -1,4 +1,4 @@
-import { loop, drawing, sprites, audios, spriteSheets } from "./setup"
+import { loop, drawing, audios, sprites, spriteSheets } from "./setup"
 
 loop.framerate = 60
 
