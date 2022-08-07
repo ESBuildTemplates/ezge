@@ -5,7 +5,7 @@ export default class AudioManager<
   Sources extends Record<string, `${string}.mp3`>
 > extends AssetManager<howler.Howl, Sources> {
   protected mapper(key: keyof Sources, src: string): Promise<howler.Howl> {
-    return Promise.resolve(new howler.Howl({ src }))
+    return Promise.resolve(new howler.Howl({ src, html5: true }))
   }
 
   play(key: keyof Sources & string) {
